@@ -81,7 +81,7 @@ class CuboidControllerTest {
                 .andExpect(jsonPath("$", IsNot.not(IsNull.nullValue())))
                 .andExpect(result -> Assertions.assertThat(
                                 result.getResponse().getContentAsString())
-                        .contains("\"id\":3,\"width\":3.0,\"height\":3.0,\"depth\":3.0,\"volume\":27.0,\"bagId\":3"));
+                        .contains("[{\"id\":1,\"width\":5.0,\"height\":3.0,\"depth\":2.0,\"volume\":null,\"bagId\":1},{\"id\":2,\"width\":4.0,\"height\":4.0,\"depth\":2.0,\"volume\":null,\"bagId\":2},{\"id\":3,\"width\":3.0,\"height\":3.0,\"depth\":3.0,\"volume\":null,\"bagId\":3}"));
     }
 
     @Test

@@ -81,7 +81,7 @@ class CuboidServiceTest {
         CuboidDTO cuboidDTO = CuboidDTO.builder()
                 .width(cuboid.getWidth()).height(cuboid.getHeight())
                 .depth(cuboid.getDepth()).bagId(bag.getId()).build();
-        Mockito.when(mapper.map(cuboidDTO, Cuboid.class)).thenReturn(cuboid);
+        //Mockito.when(mapper.map(cuboidDTO, Cuboid.class)).thenReturn(cuboid);
         Mockito.when(bagRepository.findById(cuboidDTO.getBagId())).thenReturn(Optional.of(bag));
         Assertions.assertThrows(UnprocessableEntityException.class, () -> cuboidService.create(cuboidDTO));
     }
